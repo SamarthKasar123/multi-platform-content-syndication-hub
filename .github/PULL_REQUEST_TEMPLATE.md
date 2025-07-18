@@ -40,7 +40,7 @@ Any additional information about the pull request.
 
 ---
 
-## rtCamp Code Review Checklist
+## Enterprise Code Review Checklist
 
 ### Technical Review
 - [ ] Code follows WordPress best practices

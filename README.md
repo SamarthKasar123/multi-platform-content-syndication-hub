@@ -5,17 +5,14 @@
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-5.0%2B-blue.svg)](https://wordpress.org/)
 [![PHP Version](https://img.shields.io/badge/PHP-8.0%2B-777BB4.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![rtCamp](https://img.shields.io/badge/Built%20for-rtCamp-orange.svg)](https://rtcamp.com/)
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/multi-platform-syndication.svg)](https://github.com/yourusername/multi-platform-syndication/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/multi-platform-syndication.svg)](https://github.com/yourusername/multi-platform-syndication/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/SamarthKasar123/multi-platform-content-syndication-hub.svg)](https://github.com/SamarthKasar123/multi-platform-content-syndication-hub/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/SamarthKasar123/multi-platform-content-syndication-hub.svg)](https://github.com/SamarthKasar123/multi-platform-content-syndication-hub/stargazers)
 
 ---
 
-## 🎯 **rtCamp Application Project**
+## 🎯 **Enterprise WordPress Plugin**
 
-This plugin was developed as a comprehensive demonstration for **rtCamp's Associate Software Engineer** position, showcasing enterprise-grade WordPress development skills required for high-profile clients including **Google**, **Facebook (Meta)**, **Indian Express**, **Penske Media**, and **Al Jazeera**.
-
-**🔗 About rtCamp**: [rtcamp.com](https://rtcamp.com/) | **💼 Campus Program**: [careers.rtcamp.com/campus](https://careers.rtcamp.com/campus)
+This plugin demonstrates advanced WordPress development skills with enterprise-grade architecture and modern development practices. Built to showcase expertise in complex plugin development, API integrations, and scalable WordPress solutions.
 
 ## 🚀 Features
 
@@ -393,7 +390,7 @@ tail -f /wp-content/debug.log | grep "MPCS_HUB"
 
 ## 🤝 Contributing
 
-This project was created for rtCamp job application demonstration. However, if you'd like to contribute:
+This project welcomes contributions from the community. If you'd like to contribute:
 
 1. Fork the repository
 2. Create a feature branch
@@ -406,14 +403,13 @@ This project is licensed under the GPL v2 or later - see the [LICENSE](LICENSE) 
 
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
-- Email: your.email@example.com
+**Author**
+- GitHub: [@SamarthKasar123](https://github.com/SamarthKasar123)
+- Project: [Multi-Platform Content Syndication Hub](https://github.com/SamarthKasar123/multi-platform-content-syndication-hub)
 
-## 🎯 rtCamp Application
+## 🎯 Technical Showcase
 
-This plugin demonstrates the following skills required for rtCamp:
+This plugin demonstrates advanced WordPress development skills:
 
 ### Technical Skills
 - **WordPress Development**: Custom plugin architecture, hooks, filters
@@ -441,4 +437,4 @@ This project showcases enterprise-level WordPress development skills and demonst
 
 ---
 
-**Built with ❤️ for rtCamp**
+**Built with ❤️ and modern WordPress development practices**
