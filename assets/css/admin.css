@@ -1,0 +1,577 @@
+/**
+ * Multi-Platform Syndication Hub Admin Styles
+ */
+
+/* Dashboard Layout */
+.mpcs-dashboard {
+    max-width: 1200px;
+}
+
+/* Statistics Grid */
+.mpcs-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.mpcs-stat-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.mpcs-stat-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2271b1;
+    margin-bottom: 5px;
+}
+
+.mpcs-stat-label {
+    color: #646970;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Quick Actions */
+.mpcs-quick-actions {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.mpcs-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.mpcs-action-buttons .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Platform Overview */
+.mpcs-platform-overview {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.mpcs-platform-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.mpcs-platform-stat {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 15px;
+    background: #fafafa;
+}
+
+.mpcs-platform-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.mpcs-platform-header h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.mpcs-success-rate {
+    background: #00a32a;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.mpcs-platform-metrics {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.mpcs-metric {
+    text-align: center;
+    flex: 1;
+}
+
+.mpcs-metric-value {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2271b1;
+}
+
+.mpcs-metric.success .mpcs-metric-value {
+    color: #00a32a;
+}
+
+.mpcs-metric.failed .mpcs-metric-value {
+    color: #d63638;
+}
+
+.mpcs-metric-label {
+    display: block;
+    font-size: 12px;
+    color: #646970;
+    text-transform: uppercase;
+}
+
+.mpcs-progress-bar {
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.mpcs-progress-fill {
+    height: 100%;
+    background: #00a32a;
+    transition: width 0.3s ease;
+}
+
+/* Empty State */
+.mpcs-empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #646970;
+}
+
+.mpcs-empty-icon {
+    font-size: 48px;
+    color: #c3c4c7;
+    margin-bottom: 20px;
+}
+
+.mpcs-empty-state h3 {
+    margin: 20px 0 10px;
+    color: #1d2327;
+}
+
+/* Recent Activity */
+.mpcs-recent-activity {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.mpcs-activity-list {
+    margin-top: 15px;
+}
+
+.mpcs-activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f1;
+    transition: background-color 0.2s ease;
+}
+
+.mpcs-activity-item:hover {
+    background: #f9f9f9;
+}
+
+.mpcs-activity-item:last-child {
+    border-bottom: none;
+}
+
+.mpcs-activity-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.mpcs-status-success .mpcs-activity-icon {
+    background: #00a32a;
+}
+
+.mpcs-status-failed .mpcs-activity-icon {
+    background: #d63638;
+}
+
+.mpcs-status-pending .mpcs-activity-icon {
+    background: #dba617;
+}
+
+.mpcs-status-processing .mpcs-activity-icon {
+    background: #2271b1;
+}
+
+.mpcs-activity-content {
+    flex: 1;
+}
+
+.mpcs-activity-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.mpcs-activity-title a {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.mpcs-activity-title a:hover {
+    color: #135e96;
+}
+
+.mpcs-activity-meta {
+    font-size: 13px;
+    color: #646970;
+    margin-bottom: 5px;
+}
+
+.mpcs-activity-meta span {
+    margin-right: 10px;
+}
+
+.mpcs-platform {
+    background: #f0f0f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+
+.mpcs-error-message {
+    background: #fcf2f2;
+    border: 1px solid #f0b7b8;
+    color: #d63638;
+    padding: 8px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.mpcs-activity-actions {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.mpcs-view-all {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f1;
+}
+
+/* Meta Box Styles */
+.mpcs-meta-box {
+    margin: -6px -12px -12px;
+}
+
+.mpcs-meta-section {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.mpcs-meta-section:last-child {
+    border-bottom: none;
+}
+
+.mpcs-meta-section h4 {
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+
+.mpcs-auto-sync-toggle {
+    margin-bottom: 15px;
+}
+
+.mpcs-auto-sync-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.mpcs-platform-checkboxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.mpcs-platform-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mpcs-platform-checkbox input[type="checkbox"] {
+    margin: 0;
+}
+
+.mpcs-sync-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mpcs-sync-button {
+    width: 100%;
+    text-align: center;
+}
+
+.mpcs-sync-status {
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.mpcs-sync-status.success {
+    background: #d7f5d7;
+    color: #00a32a;
+}
+
+.mpcs-sync-status.failed {
+    background: #fcf2f2;
+    color: #d63638;
+}
+
+.mpcs-sync-status.pending {
+    background: #fef8e7;
+    color: #dba617;
+}
+
+/* Post List Column Styles */
+.mpcs-status-none {
+    color: #646970;
+    font-style: italic;
+}
+
+.mpcs-status-success {
+    background: #00a32a;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.mpcs-status-failed {
+    background: #d63638;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.mpcs-status-pending {
+    background: #dba617;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Platform Configuration */
+.mpcs-platform-config {
+    display: grid;
+    gap: 20px;
+    max-width: 800px;
+}
+
+.mpcs-platform-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mpcs-platform-header {
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mpcs-platform-body {
+    padding: 20px;
+}
+
+.mpcs-platform-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.mpcs-platform-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mpcs-platform-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.mpcs-platform-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .mpcs-platform-slider {
+    background-color: #2271b1;
+}
+
+input:checked + .mpcs-platform-slider:before {
+    transform: translateX(30px);
+}
+
+.mpcs-config-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.mpcs-config-field {
+    margin-bottom: 15px;
+}
+
+.mpcs-config-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.mpcs-config-field input,
+.mpcs-config-field textarea,
+.mpcs-config-field select {
+    width: 100%;
+    max-width: 100%;
+}
+
+.mpcs-config-field .description {
+    font-size: 12px;
+    color: #646970;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mpcs-stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .mpcs-action-buttons {
+        flex-direction: column;
+    }
+    
+    .mpcs-platform-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .mpcs-activity-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .mpcs-activity-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* Loading States */
+.mpcs-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.mpcs-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #2271b1;
+    border-radius: 50%;
+    animation: mpcs-spin 1s linear infinite;
+}
+
+@keyframes mpcs-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notifications */
+.mpcs-notification {
+    position: fixed;
+    top: 32px;
+    right: 20px;
+    background: #fff;
+    border-left: 4px solid #2271b1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    min-width: 300px;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+}
+
+.mpcs-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mpcs-notification.success {
+    border-left-color: #00a32a;
+}
+
+.mpcs-notification.error {
+    border-left-color: #d63638;
+}
+
+.mpcs-notification.warning {
+    border-left-color: #dba617;
+}

@@ -1,0 +1,107 @@
+{
+    "name": "yourusername/multi-platform-syndication",
+    "description": "Enterprise-grade WordPress plugin for automatic content syndication across multiple social media platforms and publishing networks. Built for rtCamp Associate Software Engineer application.",
+    "type": "wordpress-plugin",
+    "keywords": [
+        "wordpress",
+        "plugin", 
+        "social-media",
+        "content-syndication",
+        "rtcamp",
+        "enterprise",
+        "facebook",
+        "twitter",
+        "linkedin",
+        "instagram",
+        "medium",
+        "devto"
+    ],
+    "homepage": "https://github.com/yourusername/multi-platform-syndication",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your.email@example.com",
+            "homepage": "https://github.com/yourusername",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/yourusername/multi-platform-syndication/issues",
+        "source": "https://github.com/yourusername/multi-platform-syndication"
+    },
+    "require": {
+        "php": ">=8.0",
+        "composer/installers": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "squizlabs/php_codesniffer": "^3.7",
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpstan/phpstan": "^1.10",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "phpcompatibility/php-compatibility": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "MPCS_Hub\\": "includes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MPCS_Hub\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpcs": "phpcs --standard=WordPress --extensions=php --ignore=vendor/ .",
+        "phpcbf": "phpcbf --standard=WordPress --extensions=php --ignore=vendor/ .",
+        "phpstan": "phpstan analyse --level=8 includes/",
+        "quality": [
+            "@phpcs",
+            "@phpstan",
+            "@test"
+        ],
+        "post-install-cmd": [
+            "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs"
+        ],
+        "post-update-cmd": [
+            "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "installer-name": "multi-platform-syndication",
+        "rtcamp": {
+            "project-type": "WordPress Plugin",
+            "application": "Associate Software Engineer",
+            "skills-demonstrated": [
+                "PHP 8.0+ with OOP",
+                "MySQL Database Design",
+                "JavaScript ES6+",
+                "WordPress Plugin Architecture",
+                "REST API Development",
+                "Third-party API Integration",
+                "Security Best Practices",
+                "Performance Optimization",
+                "Testing and Quality Assurance",
+                "Professional Documentation"
+            ],
+            "enterprise-features": [
+                "Background Job Processing",
+                "Multi-platform Integration",
+                "Real-time Analytics",
+                "Error Handling and Recovery",
+                "Scalable Architecture",
+                "Security Implementation",
+                "Performance Monitoring"
+            ]
+        }
+    }
+}
