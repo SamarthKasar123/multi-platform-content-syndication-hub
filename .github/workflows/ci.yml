@@ -1,0 +1,124 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality-checks:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        php-versions: ['8.0', '8.1', '8.2']
+        wordpress-versions: ['6.0', '6.1', '6.2', '6.3', '6.4']
+    
+    name: PHP ${{ matrix.php-versions }} - WP ${{ matrix.wordpress-versions }}
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+        extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, mysql
+        coverage: xdebug
+    
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+    
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+    
+    - name: Setup WordPress Test Environment
+      run: |
+        bash bin/install-wp-tests.sh wordpress_test root '' localhost ${{ matrix.wordpress-versions }}
+    
+    - name: Run PHP CodeSniffer
+      run: composer run phpcs
+    
+    - name: Run PHPStan
+      run: composer run phpstan
+    
+    - name: Run PHPUnit tests
+      run: composer run test
+    
+    - name: Upload coverage reports to Codecov
+      if: matrix.php-versions == '8.1' && matrix.wordpress-versions == '6.4'
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  javascript-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run ESLint
+      run: npm run lint:js
+    
+    - name: Run Stylelint
+      run: npm run lint:css
+    
+    - name: Run Jest tests
+      run: npm test
+    
+    - name: Build assets
+      run: npm run build
+
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run security scan
+      uses: securecodewarrior/github-action-add-sarif@v1
+      with:
+        sarif-file: 'security-scan-results.sarif'
+
+  deploy:
+    needs: [quality-checks, javascript-tests]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build release package
+      run: |
+        composer install --no-dev --optimize-autoloader
+        npm ci && npm run build
+        zip -r multi-platform-syndication.zip . -x "*.git*" "node_modules/*" "tests/*" "*.md" "composer.*" "package.*"
+    
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false

@@ -1,0 +1,140 @@
+name: Feature Request
+description: Suggest a new feature for the Multi-Platform Syndication Plugin
+title: "[FEATURE] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new feature! 
+        
+        Please fill out this form to help us understand your request better.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like to see
+      placeholder: I would like to see...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve?
+      placeholder: Currently, I can't...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this feature to work?
+      placeholder: I think the solution should...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Are there any alternative solutions or workarounds you've considered?
+      placeholder: I've also thought about...
+
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: Feature Category
+      description: Which area does this feature relate to?
+      options:
+        - Platform Integration
+        - Content Formatting
+        - User Interface
+        - Analytics & Reporting
+        - Security & Privacy
+        - Performance
+        - API & Webhooks
+        - Configuration & Settings
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would improve workflow
+        - High - Essential for my use case
+        - Critical - Blocking current usage
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: affected-platforms
+    attributes:
+      label: Affected Platforms
+      description: Which platforms would this feature affect?
+      options:
+        - label: Twitter
+        - label: Facebook
+        - label: LinkedIn
+        - label: Instagram
+        - label: Medium
+        - label: Dev.to
+        - label: Newsletter
+        - label: All Platforms
+        - label: Not Platform Specific
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case Scenario
+      description: Describe a specific scenario where this feature would be useful
+      placeholder: For example, when I publish a blog post about...
+
+  - type: checkboxes
+    id: implementation-considerations
+    attributes:
+      label: Implementation Considerations
+      description: Are there any technical considerations for this feature?
+      options:
+        - label: May require new API integrations
+        - label: Could impact performance
+        - label: Needs backward compatibility
+        - label: Requires database changes
+        - label: Affects user interface
+        - label: Security implications
+        - label: Third-party service dependencies
+
+  - type: textarea
+    id: mockup-wireframe
+    attributes:
+      label: Mockup or Wireframe
+      description: If applicable, provide or describe visual mockups
+      placeholder: You can attach images by dragging & dropping, pasting, or clicking here.
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be interested in contributing to this feature?
+      options:
+        - label: I would like to help implement this feature
+        - label: I can provide testing and feedback
+        - label: I can help with documentation
+        - label: I prefer to only suggest the idea
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this feature request, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

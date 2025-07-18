@@ -1,0 +1,196 @@
+name: Bug Report
+description: File a bug report for the Multi-Platform Syndication Plugin
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        
+        Please provide as much detail as possible to help us reproduce and fix the issue.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: When I try to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Step-by-step instructions to reproduce the issue
+      placeholder: |
+        1. Go to...
+        2. Click on...
+        3. Scroll down to...
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+      placeholder: I expected...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened
+      placeholder: Instead, what happened was...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Low - Minor inconvenience
+        - Medium - Affects functionality
+        - High - Breaks important features
+        - Critical - Plugin unusable
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-platforms
+    attributes:
+      label: Affected Platform(s)
+      description: Which platform(s) are affected by this bug?
+      multiple: true
+      options:
+        - Twitter
+        - Facebook
+        - LinkedIn
+        - Instagram
+        - Medium
+        - Dev.to
+        - Newsletter
+        - WordPress Admin
+        - All Platforms
+        - Unknown
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin Version
+      description: Which version of the plugin are you using?
+      placeholder: e.g., 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: wordpress-version
+    attributes:
+      label: WordPress Version
+      description: Which version of WordPress are you running?
+      placeholder: e.g., 6.4.1
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP Version
+      description: Which version of PHP is your server running?
+      placeholder: e.g., 8.1.2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser (if applicable)
+      description: Which browser are you using?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Internet Explorer
+        - Opera
+        - Other
+        - Not applicable
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: Error Messages
+      description: Any error messages or logs related to this bug
+      placeholder: Paste error messages here...
+      render: shell
+
+  - type: textarea
+    id: console-errors
+    attributes:
+      label: Browser Console Errors (if applicable)
+      description: Any JavaScript errors in the browser console
+      placeholder: Paste console errors here...
+      render: javascript
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context about the problem
+      placeholder: This might be related to...
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain the problem
+      placeholder: You can attach images by dragging & dropping, pasting, or clicking here.
+
+  - type: checkboxes
+    id: plugin-conflicts
+    attributes:
+      label: Plugin Conflicts
+      description: Have you tested for plugin conflicts?
+      options:
+        - label: I have deactivated other plugins to test for conflicts
+        - label: The issue persists with only this plugin active
+        - label: I have not tested for plugin conflicts yet
+
+  - type: checkboxes
+    id: theme-conflicts
+    attributes:
+      label: Theme Conflicts
+      description: Have you tested with a default WordPress theme?
+      options:
+        - label: I have tested with a default WordPress theme (Twenty Twenty-Four, etc.)
+        - label: The issue persists with a default theme
+        - label: I have not tested with a default theme yet
+
+  - type: checkboxes
+    id: troubleshooting
+    attributes:
+      label: Troubleshooting Steps Attempted
+      description: What troubleshooting steps have you already tried?
+      options:
+        - label: Cleared browser cache
+        - label: Deactivated and reactivated the plugin
+        - label: Checked WordPress debug logs
+        - label: Tested with different user roles
+        - label: Checked platform API credentials
+        - label: Verified platform API limits
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this bug report, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
